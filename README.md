@@ -1,4 +1,4 @@
-<h3 align="left">Computer Engineering student at CESUPA (3rd semester).<br>Focused on software development, cloud computing, and real-world problem solving through technology.<br>Interested in backend development, embedded systems, and machine learning.<br><br>📍 Belém, Brazil | 🧠 Always learning</h3>
+<h3 align="left">Computer Engineering student at CESUPA (4th semester).<br>Focused on software development, cloud computing, and real-world problem solving through technology.<br>Interested in backend development, embedded systems, and machine learning.<br><br>📍 Belém, Brazil | 🧠 Always learning</h3>
 
 ###
 
