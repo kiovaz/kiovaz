@@ -1,4 +1,4 @@
-<h3 align="left"><br><br>📍 Belém, Brazil | 🧠 Always learning</h3>
+<h3 align="left">📍 Belém, Brazil | 🧠 Always learning</h3>
 
 ###
 
