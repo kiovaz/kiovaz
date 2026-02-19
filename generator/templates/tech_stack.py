@@ -20,7 +20,7 @@ def _build_language_bars(lang_data, theme, left_x, start_y):
         str of SVG elements for the language bars
     """
     bar_lines = []
-    bar_max_width = 200
+    bar_max_width = 560
 
     for i, lang in enumerate(lang_data):
         y = start_y + i * 22
@@ -29,10 +29,10 @@ def _build_language_bars(lang_data, theme, left_x, start_y):
 
         bar_lines.append(f'''    <g transform="translate({left_x}, {y})">
       <text x="0" y="0" fill="{theme['text_dim']}" font-size="11" font-family="sans-serif" dominant-baseline="middle">{esc(lang['name'])}</text>
-      <rect x="110" y="-6" width="{bar_w}" height="12" rx="3" fill="{lang['color']}" opacity="0.85">
+      <rect x="140" y="-6" width="{bar_w}" height="12" rx="3" fill="{lang['color']}" opacity="0.85">
         <animate attributeName="width" from="0" to="{bar_w}" dur="0.8s" begin="{delay}" fill="freeze"/>
       </rect>
-      <text x="320" y="0" fill="{theme['text_faint']}" font-size="10" font-family="monospace" dominant-baseline="middle">{lang['percentage']}%</text>
+      <text x="720" y="0" fill="{theme['text_faint']}" font-size="10" font-family="monospace" dominant-baseline="middle">{lang['percentage']}%</text>
     </g>''')
 
     return "\n".join(bar_lines)
