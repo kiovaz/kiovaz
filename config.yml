@@ -57,13 +57,7 @@ galaxy_arms:
 #   repo: "owner/repo-name"   — GitHub repository path
 #   arm: 0-2                  — Which galaxy arm to associate with (index)
 #   description: "..."        — Short description shown on the card
-projects:
-  - repo: "kiovaz/crypto-dashboard-eda"
-    arm: 0
-    description: "crypto dashboard built with streamlit and python"
-  - repo: "kiovaz/terraform-lab"
-    arm: 1
-    description: "terraform lab"
+projects: []
 
 # Theme color overrides (optional — defaults to deep space palette)
 # All values must be valid hex color codes (#RRGGBB)

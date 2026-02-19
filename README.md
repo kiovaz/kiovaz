@@ -19,33 +19,3 @@
 <div align="center">
   <img src="./assets/generated/tech-stack.svg" width="850" alt="Tech Stack"/>
 </div>
-
-<br/>
-
-<div align="center">
-  <img src="./assets/generated/projects-constellation.svg" width="850" alt="Featured Projects"/>
-</div>
-
-<br/>
-
-<details>
-<summary><strong>More about me</strong></summary>
-
-<br/>
-
-Building tools and applications and cloud.
-Passionate about distributed systems, developer experience, and the open-source ecosystem.
-
-**Currently at** Earth
-</details>
-
-<br/>
-
-<div align="center">
-  <a href="mailto:caiovasconcelos01@live.com">
-    <img src="https://img.shields.io/badge/-Email-080c14?style=for-the-badge&logo=gmail&logoColor=00d4ff" alt="Email"/>
-  </a>
-  <a href="https://www.linkedin.com/in/caio-vasconcelos-b155a1323">
-    <img src="https://img.shields.io/badge/-LinkedIn-080c14?style=for-the-badge&logo=linkedin&logoColor=a78bfa" alt="LinkedIn"/>
-  </a>
-</div>

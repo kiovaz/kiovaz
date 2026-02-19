@@ -242,48 +242,15 @@ def render(
     """
     lang_data = calculate_language_percentages(languages, exclude, max_display)
 
-    # Left side: Language bars
+    # Language bars
     left_x = 30
     start_y = 65
 
     bars_str = _build_language_bars(lang_data, theme, left_x, start_y)
 
-    # Right side: Focus Sectors radar
-    all_arm_colors = resolve_arm_colors(galaxy_arms, theme)
-
-    # Build sector data
-    sector_data = []
-    for i, arm in enumerate(galaxy_arms):
-        color = all_arm_colors[i]
-        items = arm.get("items", [])
-        sector_data.append({
-            "name": arm["name"],
-            "color": color,
-            "items": len(items),
-            "start_deg": i * 120 + 1,
-            "end_deg": (i + 1) * 120 - 1,
-        })
-
-    # Radar geometry
-    radius = 65
-    rcx = 637  # center of right half (425..850)
-    badge_start_y = 65
-    rcy = badge_start_y + radius + 10  # center y
-    grid_rings = [22, 44, 65]
-
-    # Dynamic height
+    # Dynamic height based on language count
     lang_height = start_y + len(lang_data) * 22 + 20
-    radar_height = rcy + radius + 35
-    height = max(200, lang_height, radar_height)
-
-    # Build radar SVG elements
-    radar_parts = []
-    radar_parts.append(_build_radar_grid(rcx, rcy, grid_rings, theme))
-    radar_parts.append(_build_radar_sectors(sector_data, rcx, rcy, radius, theme))
-    radar_parts.append(_build_radar_needle(rcx, rcy, radius, theme))
-    radar_parts.append(_build_radar_labels_and_dots(sector_data, galaxy_arms, rcx, rcy, radius, theme))
-
-    radar_str = "\n".join(radar_parts)
+    height = max(200, lang_height)
 
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{height}" viewBox="0 0 {WIDTH} {height}">
   <defs/>
@@ -292,16 +259,8 @@ def render(
   <rect x="0.5" y="0.5" width="{WIDTH - 1}" height="{height - 1}" rx="12" ry="12"
         fill="{theme['nebula']}" stroke="{theme['star_dust']}" stroke-width="1"/>
 
-  <!-- Left: Language Telemetry -->
+  <!-- Language Telemetry -->
   <text x="30" y="38" fill="{theme['text_faint']}" font-size="11" font-family="monospace" letter-spacing="3">LANGUAGE TELEMETRY</text>
 
-  <!-- Vertical divider -->
-  <line x1="425" y1="25" x2="425" y2="{height - 25}" stroke="{theme['star_dust']}" stroke-width="1" opacity="0.4"/>
-
-  <!-- Right: Focus Sectors -->
-  <text x="460" y="38" fill="{theme['text_faint']}" font-size="11" font-family="monospace" letter-spacing="3">FOCUS SECTORS</text>
-
 {bars_str}
-
-{radar_str}
 </svg>'''
